@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
+  <!--Bootsrap Links-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!--Estilos-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+
+</head>
+
+<body>
+  <main>
+      
+    <section id="section1"> 
+      <img id="cube" src="images/illustration-box-desktop.svg" alt="">
+      <img id="womanMobile" src="images/illustration-woman-online-mobile.svg"></br>
+      <img id="woman" src="images/illustration-woman-online-desktop.svg" alt=""> 
+    </section>
+    
+    <section id="section2">
+      <h1>FAQ</h1>
+      <div id="accordion">
+
+        <div class="card">
+          <div class="card-header">
+            <a class="collapsed card-link" data-toggle="collapse" href="#collapseOne" onclick="resaltarTitulo(1)">How
+              many team
+              members can I invite? <img class="imgFlecha" src="images/icon-arrow-down.svg" alt=""></a>
+          </div>
+          <div id="collapseOne" class="collapse" data-parent="#accordion">
+            <div class="card-body">
+              You can invite up to 2 additional users on the Free plan. There is no limit on team members for the
+              Premium plan.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo" onclick="resaltarTitulo(2)">What
+              is the maximum file upload
+              size?<img class="imgFlecha" src="images/icon-arrow-down.svg" alt=""></a>
+          </div>
+          <div id="collapseTwo" class="collapse" data-parent="#accordion">
+            <div class="card-body">
+              No more than 2GB. All files in your account must fit your allotted storage space.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree" onclick="resaltarTitulo(3)">How
+              do I reset my password?<img class="imgFlecha" src="images/icon-arrow-down.svg" alt=""></a>
+          </div>
+          <div id="collapseThree" class="collapse" data-parent="#accordion">
+            <div class="card-body">
+              Click “Forgot password” from the login page or “Change password” from your profile page. A reset link will
+              be emailed to you.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <a class="collapsed card-link" data-toggle="collapse" href="#collapseFour" onclick="resaltarTitulo(4)">Can I
+              cancel my subscription?<img class="imgFlecha" src="images/icon-arrow-down.svg" alt=""></a>
+          </div>
+          <div id="collapseFour" class="collapse" data-parent="#accordion">
+            <div class="card-body">
+              Yes! Send us a message and we’ll process your request no questions asked.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <a class="collapsed card-link" data-toggle="collapse" href="#collapseFive" onclick="resaltarTitulo(5)">Do
+              you provide additional
+              support?<img class="imgFlecha" src="images/icon-arrow-down.svg" alt=""></a>
+          </div>
+          <div id="collapseFive" class="collapse" data-parent="#accordion">
+            <div class="card-body">
+              Chat and email support is available 24/7. Phone lines are open during normal business hours.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer>
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/MatiasEmiliano" target="blank">MatiasEmiliano</a>.
+  </footer>
+
+  <script>
+    var titulos = document.getElementsByClassName("card-link");
+    var flechas = document.getElementsByClassName("imgFlecha");
+    function resaltarTitulo(num) {
+
+      for (let i = 0; i < titulos.length; i++) {
+        if (i == num - 1) {
+          if(flechas[i].style.transform == "rotate(180deg)"){
+            flechas[i].style.transform = "rotate(0deg)";
+            titulos[i].style.fontWeight = 'normal';
+          }else if(flechas[i].style.transform == "rotate(0deg)"){
+            flechas[i].style.transform = "rotate(180deg)";
+            titulos[i].style.fontWeight = 'bold';
+          }
+        } else {
+          titulos[i].style.fontWeight = 'normal';
+          flechas[i].style.transform = "rotate(0deg)";
+        }
+      }
+    }
+  </script>
+
+</body>
+
+
+</html>
